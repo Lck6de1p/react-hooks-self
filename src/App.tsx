@@ -1,21 +1,23 @@
-import React, { FC, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import routes from './router/config'
 
-import './styles/reset.css';
-import './styles/antd.css';
-
-const App: FC = () => {
+import { Switch, Route } from 'react-router-dom';
+import { hooksRoutes } from './router/config';
+import Frame
+ from './components/Frame';
+const App = () => {
   return (
-    <Suspense fallback={<div>loading...</div>}>
-      <Router>
-        <Switch>
-          {routes.map(route => (
-            <Route key={route.path} path={route.path} component={route.component}></Route>
-          ))}
-        </Switch>
-      </Router>
-    </Suspense>
+    <Frame>
+      <Switch>
+        {hooksRoutes.map(route => (
+          <Route
+            key={route.path}
+            path={route.path}
+            render={(routeProps: any) => {
+              return <route.component {...routeProps} />
+            }}
+          />
+        ))}
+      </Switch>
+    </Frame>
   );
 }
 

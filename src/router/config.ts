@@ -1,22 +1,29 @@
-import React from "react"
+import Login from "../pages/login/Index"
+import UseMouseHook from "../pages/useMouseHook"
+import Test from "../pages/test"
+import pageNotFound from "../pages/pageNotFound"
 
-const routes = [
+
+export const mainRoutes = [
     {
-        path: '/',
-        component: React.lazy(() => import('../layout')),
-        childern: [
-            {
-                path: '/useMouseHook',
-                component: React.lazy(() => import('../page/useMouseHook')),
-                title: 'useMouseHookDemo'
-            },
-            {
-                path: '/test',
-                component: React.lazy(() => import('../page/test')),
-                title: 'testDemo'
-            }
-        ]
-    }
+        path: '/login',
+        component: Login
+    },
+    {
+        path: '/404',
+        component: pageNotFound
+    },
 ]
+export const hooksRoutes = [
+    {
+        path: '/hooks/useMouseHook',
+        component: UseMouseHook,
+        title: 'useMouseHookDemo'
+    },
+    {
+        path: '/hooks/test',
+        component: Test,
+        title: 'testDemo'
+    }
 
-export default routes
+]
