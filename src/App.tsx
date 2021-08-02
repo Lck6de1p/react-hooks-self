@@ -2,7 +2,7 @@
 import { Switch, Route } from 'react-router-dom';
 import { hooksRoutes } from './router/config';
 import Frame
- from './components/Frame';
+from './components/Frame';
 const App = () => {
   return (
     <Frame>

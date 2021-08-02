@@ -2,6 +2,7 @@ import Login from "../pages/login/Index"
 import UseMouseHook from "../pages/useMouseHook"
 import Test from "../pages/test"
 import pageNotFound from "../pages/pageNotFound"
+import reactRedux from "../pages/reactRedux"
 
 
 export const mainRoutes = [
@@ -24,6 +25,11 @@ export const hooksRoutes = [
         path: '/hooks/test',
         component: Test,
         title: 'testDemo'
+    },
+    {
+        path: '/hooks/reactRedux',
+        component: reactRedux,
+        title: 'react-redux'
     }
 
 ]
